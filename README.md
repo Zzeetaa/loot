@@ -1,2 +1,1 @@
-# Example
-An example greeter plugin
+Adds the "loot" sound effect from the creator Lens to the chest in the gauntlet

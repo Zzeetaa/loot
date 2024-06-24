@@ -58,6 +58,13 @@ public class LootPlugin extends Plugin
 					FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
 					volume.setValue(-15f);
 					clip.loop(0);
+					clip.addLineListener(new LineListener() {
+						public void update(LineEvent myLineEvent) {
+							if (myLineEvent.getType() == LineEvent.Type.STOP){
+								clip.close();
+							}
+						}
+					});
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
